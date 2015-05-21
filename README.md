@@ -1,5 +1,5 @@
 # gulpfiles
-My gulpfiles for [gulp-straw][https://github.com/cognitom/gulp-straw]
+My gulpfiles for [gulp-straw](https://github.com/cognitom/gulp-straw)
 
 ## Installation
 
