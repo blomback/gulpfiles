@@ -1,16 +1,16 @@
-var gulp         = require('gulp');
-var sass         = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var uglify       = require('gulp-uglify');
-var jshint       = require('gulp-jshint');
-var header       = require('gulp-header');
-var rename       = require('gulp-rename');
-var minifyCSS    = require('gulp-minify-css');
-var gutil        = require('gulp-util');
-var sourcemaps   = require('gulp-sourcemaps');
-var package      = require('./package.json');
-var paths        = require('./paths.json');
-var concat       = require('gulp-concat');
+var gulp         = require('gulp'),
+	sass         = require('gulp-sass'),
+	autoprefixer = require('gulp-autoprefixer'),
+	uglify       = require('gulp-uglify'),
+	jshint       = require('gulp-jshint'),
+	header       = require('gulp-header'),
+	rename       = require('gulp-rename'),
+	minifyCSS    = require('gulp-minify-css'),
+	gutil        = require('gulp-util'),
+	sourcemaps   = require('gulp-sourcemaps'),
+	package      = require('./package.json'),
+	paths        = require('./paths.json'),
+	concat       = require('gulp-concat');
 
 
 var banner = [
@@ -36,7 +36,7 @@ gulp.task('css', function()
 			gutil.beep();
 		})
 		.pipe(autoprefixer('last 4 version'))
-		.pipe(gulp.dest(paths.css.dest))
+		.pipe(gulp.dest(paths.css.build))
 		.pipe(minifyCSS())
 		.pipe(rename({suffix: '.min'}))
 		.pipe(header(banner, {package: package}))
@@ -47,8 +47,8 @@ gulp.task('css', function()
 gulp.task('js', function()
 {
 	gulp.src(paths.js.src)
-		.pipe(concat('all.js'))
-		.pipe(gulp.dest(paths.js.dest))
+		.pipe(concat('script.js'))
+		.pipe(gulp.dest(paths.js.build))
 		.pipe(uglify())
 		.on('error', function(err)
 		{

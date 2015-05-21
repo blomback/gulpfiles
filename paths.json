@@ -10,17 +10,20 @@
 			"resources/assets/js/vendor/*.js",
 			"resources/assets/js/*.js"
 		],
+		"build": "resources/assets/build/js/",
 		"dest": "public/js/"
 	},
 
 	"css": {
 		"watch": [
+			"resources/assets/sass/*.css",
 			"resources/assets/sass/*.scss",
 			"resources/assets/sass/*.sass"
 		],
 		"src": [
 			"resources/assets/sass/style.scss"
 		],
+		"build": "resources/assets/build/css/",
 		"dest": "public/css/"
 	}
 }
