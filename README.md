@@ -1,6 +1,7 @@
 # gulpfiles
 
 Installation:
+
 	straw install blomback:gulpfile blomback:paths
 
 Change paths.js to fit your needs. It it is made to use Laravel paths out of the box.
